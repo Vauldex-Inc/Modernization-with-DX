@@ -1,0 +1,45 @@
+$white:                       #FFFFFF;
+$black:                       #000000;
+$blue:                        #3554BD;
+$light-red:                   #FDDEDA;
+$lighter-red:                 #e17b7b;
+$light-blue:                  #709CED;
+$lighter-blue:                #CBDAF7;
+$lightest-blue:               #F5F6FA;
+$light-gray:                  #F8F7F9;
+$gray:                        #E6E5EC;
+$red:                         #EB0303;
+$dirty-white:                 #F8F7F9;
+$yellow:                      #FDF1BE;
+$thin-blue:                   #DAE6FC;
+$dark-blue:                   #233964;
+$darker-blue:                 #233565;
+$light-green:                 #E9FCFA;
+$green:                       #008000;
+$orange:                      #f09133;
+$bright-red:                  #FF0000;
+$gold:                        #DAA520;
+$mint-green:                  #A9D18F;
+$clover:                      #3F562A;
+$navy-blue:                   #000055;
+$orange-variant:              #C55A11;
+
+$primary:                     $blue;
+$primary-variant:             $light-blue;
+$secondary:                   $white;
+$secondary-variant:           $dirty-white;
+
+$background:                  $white;
+$outline:                     $light-blue;
+$surface:                     $light-gray;
+$banner-background:           $thin-blue;
+
+$text-on-primary:             $white;
+$text-on-secondary:           $blue;
+$text-on-surface:             $black;
+$text-on-danger:              $white;
+
+$form-element-border:         $light-blue;
+$form-element-border-focus:   $lighter-blue;
+$form-element-border-error:   $red;
+$form-element-disabled:       $yellow;
