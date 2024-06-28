@@ -1,0 +1,51 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# https://www.playframework.com/documentation/latest/ScalaRouting
+# ~~~~
+
+#authentication
+POST    /signup                          tech.vauldex.consulting_station.controllers.AuthenticationController.signup
+POST    /login                           tech.vauldex.consulting_station.controllers.AuthenticationController.login
+DELETE  /logout                          tech.vauldex.consulting_station.controllers.AuthenticationController.logout
+
+#announcements
+GET     /announcements/all                tech.vauldex.consulting_station.controllers.AnnouncementController.allAnnouncement
+POST    /announcements                    tech.vauldex.consulting_station.controllers.AnnouncementController.addAnnouncement
+GET     /announcements                    tech.vauldex.consulting_station.controllers.AnnouncementController.getLatestAnnouncement
+GET     /announcements/:id                tech.vauldex.consulting_station.controllers.AnnouncementController.getAnnouncement(id: UUID)
+PATCH   /announcements/:id                tech.vauldex.consulting_station.controllers.AnnouncementController.updateAnnouncement(id: UUID)
+DELETE  /announcements/:id                tech.vauldex.consulting_station.controllers.AnnouncementController.deleteAnnouncement(id: UUID)
+
+#events
+POST    /events                          tech.vauldex.consulting_station.controllers.EventController.addEvent
+GET     /events/public                   tech.vauldex.consulting_station.controllers.EventController.getPublicEvents
+#GET    /events/private                  tech.vauldex.consulting_station.controllers.EventController.getPrivateEvents
+GET     /events                          tech.vauldex.consulting_station.controllers.EventController.getEvents(user_type: Option[String])
+GET     /events/:id                      tech.vauldex.consulting_station.controllers.EventController.getEvent(id: UUID, user_type: Option[String])
+PATCH   /events/:id                      tech.vauldex.consulting_station.controllers.EventController.updateEvent(id: UUID)
+PATCH   /events/:id/public               tech.vauldex.consulting_station.controllers.EventController.setPublicity(id: UUID)
+DELETE  /events/:id                      tech.vauldex.consulting_station.controllers.EventController.deleteEvent(id: UUID)
+
+#plans
+POST    /plans                           tech.vauldex.consulting_station.controllers.StripeController.addPlan
+PATCH   /plan/trial/:days                 tech.vauldex.consulting_station.controllers.StripeController.updatePlan(days: String)
+GET     /plans                           tech.vauldex.consulting_station.controllers.StripeController.getPlans
+GET     /plans/default                   tech.vauldex.consulting_station.controllers.StripeController.getDefaultPlan
+GET     /plans/:id                       tech.vauldex.consulting_station.controllers.StripeController.getPlan(id: String)
+
+#members
+GET     /members/getAllEmails            tech.vauldex.consulting_station.controllers.MemberController.getAllEmails
+PATCH   /members/me/email                tech.vauldex.consulting_station.controllers.AuthenticationController.updateMyEmail
+GET     /members/me/email                tech.vauldex.consulting_station.controllers.MemberController.getMyEmail
+PATCH   /members/:id/security/state      tech.vauldex.consulting_station.controllers.MemberController.setState(id: UUID)
+GET     /members/emails                  tech.vauldex.consulting_station.controllers.MemberController.getActiveEmails
+GET     /members                         tech.vauldex.consulting_station.controllers.MemberController.getMembers
+GET     /members/me                      tech.vauldex.consulting_station.controllers.MemberController.getMyMember
+
+#materials
+POST    /members/me/materials            tech.vauldex.consulting_station.controllers.MaterialController.addMaterial
+GET     /members/me/materials            tech.vauldex.consulting_station.controllers.MaterialController.getByKeyword
+PATCH   /members/me/materials/:id        tech.vauldex.consulting_station.controllers.MaterialController.updateMaterial(id: UUID)
+DELETE  /members/me/materials            tech.vauldex.consulting_station.controllers.MaterialController.deleteMaterials
+GET     /members/me/materials/backup     tech.vauldex.consulting_station.controllers.MaterialController.backup
+GET     /members/me/materials/:id        tech.vauldex.consulting_station.controllers.MaterialController.getMyMaterial(id: UUID)
